@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="banner.png" alt="NexusHR Banner"/>
-</p>
-
 # 🚀 NexusHR  
 ### Modern Human Resource Management System
 
