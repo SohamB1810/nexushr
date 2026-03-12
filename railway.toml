@@ -1,7 +1,5 @@
 [build]
-builder = "DOCKERFILE"
-dockerfilePath = "backend/Dockerfile"
+builder = "NIXPACKS"
 
 [deploy]
-startCommand = "java -jar /app.jar"
-restartPolicyType = "ON_FAILURE"
+startCommand = "cd backend && java -jar target/payroll-0.0.1-SNAPSHOT.jar"
