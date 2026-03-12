@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["jdk17"]
+
+[phases.build]
+cmds = ["cd backend && ./mvnw clean package -DskipTests"]
+
+[start]
+cmd = "java -jar backend/target/payroll-0.0.1-SNAPSHOT.jar"
