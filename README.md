@@ -1,85 +1,227 @@
-NexusHR
+<p align="center">
+  <img src="banner.png" alt="NexusHR Banner"/>
+</p>
 
-NexusHR is a modern Human Resource Management System (HRMS) designed to streamline employee management, payroll tracking, and HR operations. The platform provides an intuitive interface for managing employees, salaries, and organizational data efficiently.
+# 🚀 NexusHR  
+### Modern Human Resource Management System
 
-This project demonstrates a full-stack HR dashboard built using modern web technologies, focusing on clean architecture, scalability, and maintainability.
+![Next.js](https://img.shields.io/badge/Frontend-Next.js-black)
+![Spring Boot](https://img.shields.io/badge/Backend-SpringBoot-green)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![GitHub stars](https://img.shields.io/github/stars/SohamB1810/nexushr?style=social)
 
-Features
+NexusHR is a full-stack **Human Resource Management System (HRMS)** designed to simplify employee management, payroll tracking, and HR operations.
 
-Employee management (add, update, delete employees)
+The system provides a modern dashboard that allows organizations to manage employees, salaries, and company records efficiently.
 
-Employee profile tracking
+This project demonstrates **enterprise-level full-stack architecture using Spring Boot and Next.js.**
 
-Salary and payroll management
+---
 
-HR dashboard interface
+# 🌐 Live Demo
 
-RESTful API backend
+Frontend Deployment
 
-Secure database integration
+https://nexushr-git-main-sohamb1810s-projects.vercel.app
 
-Scalable modular architecture
+Backend API
 
-Tech Stack
-Frontend
+http://localhost:8080/api
 
-Next.js
+---
 
-React
+# ✨ Features
 
-Tailwind CSS
+### 👥 Employee Management
+- Add new employees
+- Update employee details
+- Delete employees
+- View employee profiles
 
-TypeScript / JavaScript
+### 💰 Payroll Management
+- Manage employee salary data
+- Track payroll information
 
-Backend
+### 📊 HR Dashboard
+- Centralized HR interface
+- View employee records
 
-Spring Boot
+### 🔗 REST API Backend
+- Clean RESTful API architecture
+- Communication between frontend and backend
 
-Java
+---
 
-REST APIs
+# 🛠 Tech Stack
 
-Database
+## Frontend
+- Next.js
+- React
+- Tailwind CSS
+- Axios
 
-MySQL
+## Backend
+- Spring Boot
+- Java
+- Spring Data JPA
+- REST APIs
 
-Tools
+## Database
+- MySQL
 
-Git & GitHub
+## Development Tools
+- Git
+- GitHub
+- IntelliJ IDEA
+- VS Code
+- Postman
 
-IntelliJ IDEA
+---
 
-Node.js & npm
+# 🏗 Project Architecture
 
-Vercel (deployment)
+            ┌──────────────────┐
+            │     Frontend     │
+            │     Next.js      │
+            │ React + Tailwind │
+            └─────────┬────────┘
+                      │ REST API
+                      ▼
+            ┌──────────────────┐
+            │     Backend      │
+            │   Spring Boot    │
+            │ Controllers      │
+            │ Services         │
+            │ Repositories     │
+            └─────────┬────────┘
+                      │ JPA
+                      ▼
+            ┌──────────────────┐
+            │     Database     │
+            │      MySQL       │
+            │ Employee Table   │
+            └──────────────────┘
 
-Project Structure
+---
+
+# 🧠 System Design
+
+NexusHR follows a **layered architecture pattern** commonly used in enterprise applications.
+
+## 1 Controller Layer
+
+Handles incoming HTTP requests.
+
+Example:
+
+
+EmployeeController
+
+
+Responsibilities:
+
+- Receive API requests
+- Validate inputs
+- Return responses
+
+---
+
+## 2 Service Layer
+
+Contains business logic.
+
+Example:
+
+
+EmployeeService
+
+
+Responsibilities:
+
+- Process employee operations
+- Handle payroll logic
+- Communicate with repositories
+
+---
+
+## 3 Repository Layer
+
+Handles database operations.
+
+Example:
+
+
+EmployeeRepository
+
+
+Responsibilities:
+
+- CRUD operations
+- Database access using JPA
+
+---
+
+## 4 Entity Layer
+
+Represents database tables.
+
+Example:
+
+
+Employee.java
+
+
+Defines employee attributes mapped to database columns.
+
+---
+
+# 📂 Project Structure
+
+
 nexushr
 │
-├── frontend
-│   ├── components
-│   ├── pages
-│   ├── services
-│   └── styles
-│
 ├── backend
-│   ├── controller
-│   ├── service
-│   ├── repository
-│   ├── entity
-│   └── dto
+│ ├── controller
+│ │ └── EmployeeController.java
+│ │
+│ ├── service
+│ │ └── EmployeeService.java
+│ │
+│ ├── repository
+│ │ └── EmployeeRepository.java
+│ │
+│ ├── entity
+│ │ └── Employee.java
+│ │
+│ └── dto
+│
+├── frontend
+│ ├── components
+│ ├── pages
+│ ├── services
+│ └── styles
 │
 └── database
-    └── schema.sql
-Installation
-1 Clone the repository
+└── schema.sql
+
+
+---
+
+# ⚙ Installation
+
+## 1 Clone Repository
+
+```bash
 git clone https://github.com/SohamB1810/nexushr.git
 cd nexushr
-Backend Setup
+🔧 Backend Setup
 
-Open backend project in IntelliJ IDEA
+Configure database in:
 
-Configure database in application.properties
+src/main/resources/application.properties
+
+Example configuration:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/nexushr
 spring.datasource.username=root
@@ -88,26 +230,22 @@ spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-Run the Spring Boot application
+Run backend:
 
-Frontend Setup
+mvn spring-boot:run
 
-Navigate to the frontend folder:
+Backend runs on
 
+http://localhost:8080
+💻 Frontend Setup
 cd frontend
-
-Install dependencies:
-
 npm install
-
-Start development server:
-
 npm run dev
 
-Open in browser:
+Frontend runs on
 
 http://localhost:3000
-Database Schema (Example)
+🗄 Database Example
 CREATE TABLE employee (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50),
@@ -118,52 +256,41 @@ CREATE TABLE employee (
     basic_salary DOUBLE,
     status VARCHAR(20)
 );
-API Endpoints
+🔗 API Endpoints
 Method	Endpoint	Description
 GET	/api/employees	Get all employees
-GET	/api/employees/{id}	Get employee by ID
-POST	/api/employees	Create new employee
+GET	/api/employees/{id}	Get employee
+POST	/api/employees	Create employee
 PUT	/api/employees/{id}	Update employee
 DELETE	/api/employees/{id}	Delete employee
-Screenshots
+🚧 Future Enhancements
 
-Add screenshots of your application here:
+Authentication with JWT
 
-/screenshots/dashboard.png
-/screenshots/employees.png
-/screenshots/payroll.png
-Future Improvements
-
-Authentication & role based access
-
-Attendance management
+Role-based access control
 
 Leave management system
 
+Attendance tracking
+
 Payroll automation
 
-Analytics dashboard
+HR analytics dashboard
 
-Contributing
-
-Contributions are welcome.
-
-Fork the repository
-
-Create a feature branch
-
-Commit your changes
-
-Submit a pull request
-
-Author
+👨‍💻 Author
 
 Soham Biswas
 
-GitHub:
+GitHub
 https://github.com/SohamB1810
 
-License
+📄 License
 
 This project is licensed under the MIT License.
 
+
+---
+
+✅ This version is **cleaner, portfolio-ready, and professional** (no screenshot/demo section).
+
+If you want, I can also show you **how to add a GitHub README Table of Contents automatically
