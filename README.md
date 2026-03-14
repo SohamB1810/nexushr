@@ -283,10 +283,3 @@ https://github.com/SohamB1810
 📄 License
 
 This project is licensed under the MIT License.
-
-
----
-
-✅ This version is **cleaner, portfolio-ready, and professional** (no screenshot/demo section).
-
-If you want, I can also show you **how to add a GitHub README Table of Contents automatically
